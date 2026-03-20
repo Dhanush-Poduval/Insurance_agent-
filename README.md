@@ -212,7 +212,7 @@ Transaction processed via sandbox API
 
 ### Backend
 
-* FastAPI / Node.js
+* FastAPI 
 * REST-based microservice structure
 
 ### Core Services
@@ -231,7 +231,7 @@ Transaction processed via sandbox API
 
 ### Data Layer
 
-* PostgreSQL
+* SqlLite
 
 ### Infrastructure
 
@@ -285,7 +285,16 @@ Transaction processed via sandbox API
 
 ---
 
-## 13. Demo Plan
+## 13. UI/UX Design
+
+Our platform UI has been designed using Figma, covering multiple workflows including worker onboarding, policy management, and admin analytics.
+
+View the complete interactive prototype here:
+https://figma.com/your-link
+
+---
+
+## 14. Demo Plan
 
 The system demonstration will include:
 
@@ -297,7 +306,7 @@ The system demonstration will include:
 
 ---
 
-## 14. Future Scope
+## 15. Future Scope
 
 * Integration with real delivery platforms
 * Advanced predictive modeling
@@ -306,6 +315,6 @@ The system demonstration will include:
 
 ---
 
-## 15. Conclusion
+## 16. Conclusion
 
 This system provides a scalable and automated insurance solution tailored for gig workers, combining AI-driven pricing, real-time event monitoring, and instant payouts to ensure financial resilience against unpredictable external disruptions.
