@@ -290,7 +290,7 @@ Transaction processed via sandbox API
 Our platform UI has been designed using Figma, covering multiple workflows including worker onboarding, policy management, and admin analytics.
 
 View the complete interactive prototype here:
-https://figma.com/your-link
+https://www.figma.com/proto/UuKRiV0disS98rJceBoaxu/DevTrails?node-id=1-2&t=RqRnX5P4xGej5gPn-1
 
 ---
 
