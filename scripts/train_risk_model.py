@@ -12,7 +12,7 @@ n=2000
 
 data=pd.DataFrame({
     "rainfall_mm": np.random.uniform(0, 100, n),
-    "temperature_c": np.random.uniform(20, 45, n),
+    "temperature": np.random.uniform(20, 45, n),
     "aqi": np.random.uniform(50, 400, n),
     "wind_speed": np.random.uniform(0, 50, n),
     "traffic_level": np.random.uniform(0, 1, n),
@@ -28,9 +28,9 @@ def calculate_risk(row):
     risk=0
     if row["rainfall_mm"]>60 :
         risk+=0.4
-    if row["temperature_c"] > 40:
+    if row["temperature"] > 40:
         risk += 0.2
-    if row["aqi"] > 300:
+    if row["aqi"] > 300 or row['aqi']< -5:
         risk += 0.3
     if row["wind_speed"] > 40:
         risk += 0.2
@@ -42,6 +42,7 @@ def calculate_risk(row):
         risk += 0.5
     if row["emergency_level"] >= 1:
         risk += 0.5
+    print(risk)
     return min(risk,1.0)
 
 data["risk_score"]=data.apply(calculate_risk,axis=1)

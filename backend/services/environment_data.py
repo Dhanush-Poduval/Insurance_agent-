@@ -12,6 +12,7 @@ def get_external_data(lat,lon):
     aqi_res = requests.get(aqi_url).json()
 
     print(weather_res["main"]["temp"])
+    print(aqi_res["list"][0]["main"]["aqi"]*100)
     return {
         "temperature": weather_res["main"]["temp"],
         "rainfall_mm": weather_res.get("rain", {}).get("1h", 0),
