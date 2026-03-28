@@ -1,6 +1,8 @@
 import pandas as pd 
 import numpy as np 
 from sklearn.ensemble import RandomForestRegressor
+from sklearn.model_selection import train_test_split
+from sklearn.metrics import mean_absolute_error, mean_squared_error, r2_score
 import joblib
 import os
 
@@ -40,6 +42,7 @@ def calculate_risk(row):
         risk += 0.5
     if row["emergency_level"] >= 1:
         risk += 0.5
+    return min(risk,1.0)
 
 data["risk_score"]=data.apply(calculate_risk,axis=1)
 X=data.drop("risk_score",axis=1)
@@ -49,6 +52,16 @@ model = RandomForestRegressor(
     max_depth=10,
     random_state=42
 )
-model.fit(X, Y)
+X_train, X_test, y_train, y_test = train_test_split(X, Y, test_size=0.2)
+
+model.fit(X_train, y_train)
+y_pred=model.predict(X_test)
+mae = mean_absolute_error(y_test, y_pred)
+rmse = np.sqrt(mean_squared_error(y_test, y_pred))
+r2 = r2_score(y_test, y_pred)
+print("\nModel Performance:")
+print(f"MAE: {mae:.4f}")
+print(f"RMSE: {rmse:.4f}")
+print(f"R2 Score: {r2:.4f}")
 joblib.dump(model,"models/risk_model.pkl")
 print("Train was a success and saved the model ")
