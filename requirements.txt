@@ -6,3 +6,5 @@ numpy
 joblib
 transformers
 torch
+requests
+dotenv
