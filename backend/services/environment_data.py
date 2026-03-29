@@ -14,10 +14,11 @@ def get_external_data(lat,lon):
     print(weather_res["main"]["temp"])
     print(aqi_res["list"][0]["main"]["aqi"]*100)
     return {
-        "temperature": weather_res["main"]["temp"],
         "rainfall_mm": weather_res.get("rain", {}).get("1h", 0),
+        "temperature": weather_res["main"]["temp"],
+        "aqi": aqi_res["list"][0]["main"]["aqi"] * 100,
         "wind_speed": weather_res["wind"]["speed"],
-        "aqi": aqi_res["list"][0]["main"]["aqi"] * 100
+
     }
 if __name__=='__main__':
     get_external_data(lat,lon)
