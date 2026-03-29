@@ -10,8 +10,8 @@ def predict_risk(data):
 def analyze_risk(data):
     lat=data["lat"]
     lon=data["lon"]
-    external= get_external_data(lat,lon)
-    news_text=data.get("news","")
+    external,city= get_external_data(lat,lon)
+    news_text=analyze_news(city)
     news_features={
         "curfew":0,
         "lockdown_level":0,
@@ -19,7 +19,7 @@ def analyze_risk(data):
     }
     event=None
     if news_text:
-        event, confidence = analyze_news(news_text)
+        event, confidence = analyze_news(city)
 
         if confidence > 0.6:
             news_features = map_to_features(event)

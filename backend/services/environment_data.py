@@ -10,7 +10,7 @@ def get_external_data(lat,lon):
     weather_res=requests.get(weather_url).json()
     aqi_url = f"http://api.openweathermap.org/data/2.5/air_pollution?lat={lat}&lon={lon}&appid={API_KEY}"
     aqi_res = requests.get(aqi_url).json()
-
+    city_name=weather_res.get("name","Unknown")
     print(weather_res["main"]["temp"])
     print(aqi_res["list"][0]["main"]["aqi"]*100)
     return {
@@ -19,6 +19,6 @@ def get_external_data(lat,lon):
         "aqi": aqi_res["list"][0]["main"]["aqi"] * 100,
         "wind_speed": weather_res["wind"]["speed"],
 
-    }
+    },city_name
 if __name__=='__main__':
     get_external_data(lat,lon)
