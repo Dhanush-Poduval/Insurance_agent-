@@ -130,11 +130,3 @@ if __name__ == "__main__":
         reload=True,
         log_level="info"
     )
-
-@app.post('/risk_calculation')
-def risk_calculation():
-    pass
-
-@app.post('/risk_calculation')
-def risk_calculation():
-    pass 
