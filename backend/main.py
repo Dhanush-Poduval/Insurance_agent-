@@ -15,6 +15,7 @@ from services.payout_service import PayoutService, init_payout_service
 from services.fraud_detection_service import FraudDetectionService, init_fraud_detection_service
 from database import SessionLocal
 
+<<<<<<< HEAD
 # Setup logging
 logging.basicConfig(
     level=logging.INFO,
@@ -130,3 +131,8 @@ if __name__ == "__main__":
         reload=True,
         log_level="info"
     )
+=======
+@app.post('/risk_calculation')
+def risk_calculation():
+    pass
+>>>>>>> main
