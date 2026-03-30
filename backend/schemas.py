@@ -1,4 +1,7 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 646b16d872bbb75af685bb0402be6b9d2765b86c
 from pydantic import BaseModel, Field, validator
 from typing import Optional, Dict
 from datetime import datetime, date
@@ -73,7 +76,10 @@ class TriggerEvaluationResponse(BaseModel):
     payout_triggered: bool
     payout_reason: str
     timestamp: datetime
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 646b16d872bbb75af685bb0402be6b9d2765b86c
 from pydantic import BaseModel
 from typing import Optional
 from datetime import datetime
@@ -97,4 +103,7 @@ class risk(BaseModel):
     risk:int
     class Config():
         orm_mode=True
+<<<<<<< HEAD
 >>>>>>> main
+=======
+>>>>>>> 646b16d872bbb75af685bb0402be6b9d2765b86c

@@ -16,6 +16,9 @@ from services.fraud_detection_service import FraudDetectionService, init_fraud_d
 from database import SessionLocal
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 646b16d872bbb75af685bb0402be6b9d2765b86c
 # Setup logging
 logging.basicConfig(
     level=logging.INFO,
@@ -131,8 +134,14 @@ if __name__ == "__main__":
         reload=True,
         log_level="info"
     )
+<<<<<<< HEAD
 =======
 @app.post('/risk_calculation')
 def risk_calculation():
     pass
 >>>>>>> main
+=======
+@app.post('/risk_calculation')
+def risk_calculation():
+    pass
+>>>>>>> 646b16d872bbb75af685bb0402be6b9d2765b86c
