@@ -36,7 +36,7 @@ export function useInsurance(workerId = 'worker-001') {
       setCoverage(result);
       return result;
     } catch {
-      setCoverage((prev) => ({ ...prev, status: 'active' }));
+      setCoverage((prev) => ({ ...(prev || MOCK_COVERAGE), status: 'active' }));
     } finally {
       setLoading(false);
     }
