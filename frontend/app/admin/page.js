@@ -16,19 +16,18 @@ const TABS = [
   { id: 'events', label: 'Events' },
 ];
 
+const TAB_COMPONENTS = {
+  overview: AnalyticsDashboard,
+  disruptions: DisruptionMonitor,
+  payouts: PayoutQueue,
+  underwriting: UnderwritingPanel,
+  events: EventManager,
+};
+
 export default function AdminDashboard() {
   const [activeTab, setActiveTab] = useState('overview');
 
-  const renderContent = () => {
-    switch (activeTab) {
-      case 'overview': return <AnalyticsDashboard />;
-      case 'disruptions': return <DisruptionMonitor />;
-      case 'payouts': return <PayoutQueue />;
-      case 'underwriting': return <UnderwritingPanel />;
-      case 'events': return <EventManager />;
-      default: return <AnalyticsDashboard />;
-    }
-  };
+  const ActiveComponent = TAB_COMPONENTS[activeTab] || AnalyticsDashboard;
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
@@ -44,7 +43,7 @@ export default function AdminDashboard() {
 
       <Tabs tabs={TABS} activeTab={activeTab} onChange={setActiveTab} className="mb-6" />
 
-      <div>{renderContent()}</div>
+      <div><ActiveComponent /></div>
     </div>
   );
 }

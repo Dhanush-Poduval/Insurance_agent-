@@ -8,6 +8,8 @@ import { Button } from '@/components/common/Button';
 
 const typeIcons = { weather: CloudRain, pollution: Wind, restrictions: AlertTriangle };
 
+const disruptionLevelColor = { low: 'bg-green-500', medium: 'bg-orange-500', high: 'bg-red-500' };
+
 export function InsuranceCard({ coverage }) {
   const [loading, setLoading] = useState(false);
 
@@ -45,7 +47,7 @@ export function InsuranceCard({ coverage }) {
             <span className="text-gray-500 text-sm">/week</span>
           </div>
           <div className="flex items-center gap-1.5 mt-1">
-            <div className={`w-2 h-2 rounded-full ${coverage.disruptionLevel === 'low' ? 'bg-green-500' : coverage.disruptionLevel === 'medium' ? 'bg-orange-500' : 'bg-red-500'}`} />
+            <div className={`w-2 h-2 rounded-full ${disruptionLevelColor[coverage.disruptionLevel] || 'bg-gray-400'}`} />
             <span className="text-sm text-gray-500 capitalize">{coverage.disruptionLevel} disruption risk</span>
           </div>
         </div>

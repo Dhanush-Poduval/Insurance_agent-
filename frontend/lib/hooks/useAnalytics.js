@@ -17,8 +17,6 @@ const MOCK_PAYOUTS_TIMELINE = [
 
 export function useAnalytics() {
   const { metrics, setMetrics, setLoading, loading } = useAdminStore();
-  const [claimsTimeline, setClaimsTimeline] = [MOCK_CLAIMS_TIMELINE, () => {}];
-  const [payoutsTimeline, setPayoutsTimeline] = [MOCK_PAYOUTS_TIMELINE, () => {}];
 
   const loadMetrics = useCallback(async () => {
     setLoading(true);
@@ -38,8 +36,8 @@ export function useAnalytics() {
 
   return {
     metrics: metrics || MOCK_METRICS,
-    claimsTimeline,
-    payoutsTimeline,
+    claimsTimeline: MOCK_CLAIMS_TIMELINE,
+    payoutsTimeline: MOCK_PAYOUTS_TIMELINE,
     loading,
     loadMetrics,
   };

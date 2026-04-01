@@ -46,9 +46,9 @@ export function useInsurance(workerId = 'worker-001') {
     setLoading(true);
     try {
       await insuranceClient.deactivateCoverage(workerId);
-      setCoverage((prev) => ({ ...prev, status: 'inactive' }));
+      setCoverage((prev) => prev ? { ...prev, status: 'inactive' } : { ...MOCK_COVERAGE, status: 'inactive' });
     } catch {
-      setCoverage((prev) => ({ ...prev, status: 'inactive' }));
+      setCoverage((prev) => prev ? { ...prev, status: 'inactive' } : { ...MOCK_COVERAGE, status: 'inactive' });
     } finally {
       setLoading(false);
     }
