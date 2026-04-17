@@ -1,16 +1,19 @@
-# AI-Powered Insurance Platform for Food delivery Workers
+# AI-Powered Insurance Platform for Food Delivery workers
 
 ## 1. Overview
 
-This project proposes an AI-driven parametric insurance platform designed to protect food delivery workers from income loss caused by external disruptions such as extreme weather, pollution, and local restrictions.
+This project proposes an AI-driven parametric insurance platform designed to protect delivery workers from income loss caused by external disruptions such as extreme weather, pollution, and local restrictions.
 
 The system provides **automated weekly insurance coverage**, dynamic premium pricing, real-time disruption monitoring, and instant payouts without requiring manual claims.
+
+pitch deck for our project safar ->
+        https://docs.google.com/presentation/d/10yEzOKZ5e4kHE8dryvEkjY2QE97oO_7m/edit?usp=drive_link&ouid=112165478930749982710&rtpof=true&sd=true
 
 ---
 
 ## 2. Problem Statement
 
-Gig workers depend on daily earnings through delivery platforms. External factors such as heavy rainfall, heatwaves, flooding, and high pollution levels can significantly reduce their ability to work, leading to direct income loss.
+Food delivery workers depend on daily earnings through delivery platforms. External factors such as heavy rainfall, heatwaves, flooding, high pollution levels and civil disruptions such as war pandemics etc can significantly reduce their ability to work, leading to direct income loss.
 
 Currently:
 
@@ -22,21 +25,21 @@ The need is for a **real-time, automated, and scalable income protection system*
 
 ---
 
-## 3. Pitch deck (Project safar)
-
-link to our pitch deck ppt -> https://docs.google.com/presentation/d/10yEzOKZ5e4kHE8dryvEkjY2QE97oO_7m/edit?usp=sharing&ouid=112165478930749982710&rtpof=true&sd=true
-
----
-
-## 4. Proposed Solution
+## 3. Proposed Solution
 
 We design a **parametric insurance system** where payouts are automatically triggered when predefined external conditions are met.
 
-The system operates on a **weekly insurance model**, aligned with the earning cycle of gig workers, and uses AI for pricing, event detection, and fraud prevention.
+The system operates on a **weekly insurance model**, aligned with the earning cycle of delivery workers, and uses AI for pricing, event detection, and fraud prevention.
 
+multi-factor parametric triggers including :
+ -Weather conditions(rainfall,temperature)
+ -Environmenal factors (AQI)
+ -Societal disrtuptions(lockdowns , curfews , wars)
+ -Zone-based risk scoring 
+ 
 ---
 
-## 5. System Workflow
+## 4. System Workflow
 
 ```id="flow1"
 Worker Registration
@@ -60,20 +63,21 @@ Automatic payout triggered
 
 ---
 
-## 6. Pricing Model (Core Innovation)
+## 5. Pricing Model (Core Innovation)
 
 The weekly premium is dynamically calculated using a combination of predictive modeling and financial safeguards.
 
-### 6.1 Inputs to Pricing Model
+### 5.1 Inputs to Pricing Model
 
 * Forecasted weather probability (rain, heat, pollution)
+* News factors of the zone in question includes text based parsing for list of risk words.
 * Historical disruption patterns
 * Worker location risk profile
 * Estimated daily income of worker
 
 ---
 
-### 6.2 Premium Calculation Logic
+### 5.2 Premium Calculation Logic
 
 The premium is computed as:
 
@@ -102,7 +106,7 @@ Expected Loss = P(disruption) × Estimated Income Loss
 
 ---
 
-### 6.3 Dynamic Pricing Behavior
+### 5.3 Dynamic Pricing Behavior
 
 * If forecast predicts low disruption → lower premium
 * If forecast predicts high disruption → higher premium
@@ -112,9 +116,9 @@ This creates a **balanced pricing system that minimizes loss risk for the platfo
 
 ---
 
-## 7. AI/ML Architecture
+## 6. AI/ML Architecture
 
-### 7.1 Risk & Pricing Model
+### 6.1 Risk & Pricing Model
 
 * Models: Scikit-learn / XGBoost
 * Output: Risk score and expected loss
@@ -122,7 +126,7 @@ This creates a **balanced pricing system that minimizes loss risk for the platfo
 
 ---
 
-### 7.2 Event Forecasting Model
+### 6.2 Event Forecasting Model
 
 * Predicts probability of disruption using weather data
 * Inputs:
@@ -133,14 +137,14 @@ This creates a **balanced pricing system that minimizes loss risk for the platfo
 
 ---
 
-### 7.3 Event Severity Model
+### 6.3 Event Severity Model
 
 * Converts real-time conditions into severity score
 * Used to determine payout amount
 
 ---
 
-### 7.4 Fraud Detection Model
+### 6.4 Fraud Detection Model
 
 * Detects anomalies such as:
 
@@ -150,7 +154,7 @@ This creates a **balanced pricing system that minimizes loss risk for the platfo
 
 ---
 
-### 7.5 Explainability Layer
+### 6.5 Explainability Layer
 
 * SHAP (SHapley Additive Explanations) used to:
 
@@ -160,7 +164,23 @@ This creates a **balanced pricing system that minimizes loss risk for the platfo
 
 ---
 
-## 8. Event Engine and Automation
+### 6.6 Multi Risk Engine
+The platform integrates multiple disruption signals into a unified risk score :
+  -Weather signals -rainfall,temp,wind
+  -Pollution signals -AQI levels 
+  -External signals -lockdowns , curfews(via new)
+  -Zone risk - aggregated spatial risk across nearby areas
+Each factor contributes to a composite risk score used for:
+
+- Event detection
+- Payout triggering
+- Severity calculation
+
+This ensures the system handles both natural and non-natural disruptions.
+
+---
+
+## 7. Event Engine and Automation
 
 The event engine continuously monitors external data sources and triggers disruptions.
 
@@ -169,6 +189,7 @@ The event engine continuously monitors external data sources and triggers disrup
 * Weather API integration
 * Rule-based + ML-based threshold detection
 * Real-time event creation
+* Lockdown/curfew detection using news analysis
 
 ---
 
@@ -186,10 +207,44 @@ Tasks include:
 
 ---
 
-## 9. Claims and Payout System
+## 8. Claims and Payout System
+
+---
+
+### 8.1 What-if Scenario: Prolonged Lockdown
+
+In cases such as lockdowns where risk remains consistently high:
+
+- Daily payouts are capped using remaining coverage limits
+- Time-based throttling ensures payouts are not triggered continuously
+- Weekly coverage exhaustion prevents overcompensation
+
+This ensures platform sustainability during prolonged disruptions.
 
 * Fully automated claim generation
 * No manual user input required
+
+---
+
+### 8.2 Overcompensation Prevention 
+
+To avoid excessive payouts from multiple triggers:
+
+- Payout is capped by remaining policy coverage
+- Risk threshold ensures payouts only occur above critical disruption levels
+- Event deduplication prevents multiple claims for the same disruption
+
+---
+
+### 8.3 Area-Based Payout Model
+
+In compliance with parametric insurance principles:
+
+- All workers within an affected zone are eligible for payout
+- No manual claims required
+- Ensures fairness and scalability
+
+---
 
 ### Payout Flow
 
@@ -209,7 +264,7 @@ Transaction processed via sandbox API
 
 ---
 
-## 10. System Architecture
+## 9. System Architecture
 
 ### Frontend
 
@@ -245,7 +300,7 @@ Transaction processed via sandbox API
 
 ---
 
-## 11. Data Model
+## 10. Data Model
 
 ### Entities
 
@@ -264,7 +319,7 @@ Transaction processed via sandbox API
 
 ---
 
-## 12. Data Sources
+## 11. Data Sources
 
 * Weather Data: External APIs (e.g., OpenWeather)
 * Pollution Data: AQI APIs
@@ -273,7 +328,7 @@ Transaction processed via sandbox API
 
 ---
 
-## 13. Dashboards
+## 12. Dashboards
 
 ### Worker Dashboard
 
@@ -291,7 +346,7 @@ Transaction processed via sandbox API
 
 ---
 
-## 14. UI/UX Design
+## 13. UI/UX Design
 
 Our platform UI has been designed using Figma, covering multiple workflows including worker onboarding, policy management, and admin analytics.
 
@@ -300,7 +355,7 @@ https://www.figma.com/proto/UuKRiV0disS98rJceBoaxu/DevTrails?node-id=1-2&t=RqRnX
 
 ---
 
-## 15. Demo Plan
+## 14. Demo Plan
 
 The system demonstration will include:
 
@@ -312,7 +367,7 @@ The system demonstration will include:
 
 ---
 
-## 16. Future Scope
+## 15. Future Scope
 
 * Integration with real delivery platforms
 * Advanced predictive modeling
@@ -321,13 +376,13 @@ The system demonstration will include:
 
 ---
 
-## 17. Innovation: Smarter and Proactive Protection
+## 16. Innovation: Smarter and Proactive Protection
 
 Our system is not just about giving money after a problem happens. It also helps workers prepare in advance and reduce their losses.
 
 ---
 
-### 17.1 Early Risk Alerts
+### 16.1 Early Risk Alerts
 
 The system predicts if a disruption (like heavy rain or pollution) is likely to happen soon.
 
@@ -339,7 +394,7 @@ Example:
 
 ---
 
-### 17.2 Smart Work Suggestions
+### 16.2 Smart Work Suggestions
 
 Based on the risk, the system gives simple suggestions to workers.
 
@@ -351,7 +406,7 @@ This helps workers earn more even during risky conditions.
 
 ---
 
-### 17.3 Better Payout Calculation
+### 16.3 Better Payout Calculation
 
 Instead of giving a fixed payout, we calculate how much money the worker is likely to lose.
 
@@ -365,7 +420,7 @@ This makes payouts:
 
 ---
 
-### 17.4 Transparent Pricing
+### 16.4 Transparent Pricing
 
 We use explainable AI (SHAP) to show how the premium is calculated.
 
@@ -375,7 +430,7 @@ Workers can understand:
 
 ---
 
-### 17.5 Impact
+### 16.5 Impact
 
 This system changes from:
 
@@ -385,6 +440,19 @@ Workers are not only paid after a loss, but also helped to avoid or reduce that 
 
 ---
 
-## 18. Conclusion
+## 17. Conclusion
 
 This system provides a scalable and automated insurance solution tailored for gig workers, combining AI-driven pricing, real-time event monitoring, and instant payouts to ensure financial resilience against unpredictable external disruptions.
+
+---
+
+### 18. Running the project
+To look and test the endpoints :
+```Run the backend
+   git clone https://github.com/Dhanush-Poduval/Insurance-agent-
+   cd Insurance-agent-
+   python3 -m venv .venv
+   source .venv/bin/activate
+   pip install -r requirements.txt
+   uvicorn backend.main:app --reload
+`
