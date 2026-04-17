@@ -22,7 +22,13 @@ The need is for a **real-time, automated, and scalable income protection system*
 
 ---
 
-## 3. Proposed Solution
+## 3. Pitch deck (Project safar)
+
+link to our pitch deck ppt -> https://docs.google.com/presentation/d/10yEzOKZ5e4kHE8dryvEkjY2QE97oO_7m/edit?usp=sharing&ouid=112165478930749982710&rtpof=true&sd=true
+
+---
+
+## 4. Proposed Solution
 
 We design a **parametric insurance system** where payouts are automatically triggered when predefined external conditions are met.
 
@@ -30,7 +36,7 @@ The system operates on a **weekly insurance model**, aligned with the earning cy
 
 ---
 
-## 4. System Workflow
+## 5. System Workflow
 
 ```id="flow1"
 Worker Registration
@@ -54,11 +60,11 @@ Automatic payout triggered
 
 ---
 
-## 5. Pricing Model (Core Innovation)
+## 6. Pricing Model (Core Innovation)
 
 The weekly premium is dynamically calculated using a combination of predictive modeling and financial safeguards.
 
-### 5.1 Inputs to Pricing Model
+### 6.1 Inputs to Pricing Model
 
 * Forecasted weather probability (rain, heat, pollution)
 * Historical disruption patterns
@@ -67,7 +73,7 @@ The weekly premium is dynamically calculated using a combination of predictive m
 
 ---
 
-### 5.2 Premium Calculation Logic
+### 6.2 Premium Calculation Logic
 
 The premium is computed as:
 
@@ -96,7 +102,7 @@ Expected Loss = P(disruption) × Estimated Income Loss
 
 ---
 
-### 5.3 Dynamic Pricing Behavior
+### 6.3 Dynamic Pricing Behavior
 
 * If forecast predicts low disruption → lower premium
 * If forecast predicts high disruption → higher premium
@@ -106,9 +112,9 @@ This creates a **balanced pricing system that minimizes loss risk for the platfo
 
 ---
 
-## 6. AI/ML Architecture
+## 7. AI/ML Architecture
 
-### 6.1 Risk & Pricing Model
+### 7.1 Risk & Pricing Model
 
 * Models: Scikit-learn / XGBoost
 * Output: Risk score and expected loss
@@ -116,7 +122,7 @@ This creates a **balanced pricing system that minimizes loss risk for the platfo
 
 ---
 
-### 6.2 Event Forecasting Model
+### 7.2 Event Forecasting Model
 
 * Predicts probability of disruption using weather data
 * Inputs:
@@ -127,14 +133,14 @@ This creates a **balanced pricing system that minimizes loss risk for the platfo
 
 ---
 
-### 6.3 Event Severity Model
+### 7.3 Event Severity Model
 
 * Converts real-time conditions into severity score
 * Used to determine payout amount
 
 ---
 
-### 6.4 Fraud Detection Model
+### 7.4 Fraud Detection Model
 
 * Detects anomalies such as:
 
@@ -144,7 +150,7 @@ This creates a **balanced pricing system that minimizes loss risk for the platfo
 
 ---
 
-### 6.5 Explainability Layer
+### 7.5 Explainability Layer
 
 * SHAP (SHapley Additive Explanations) used to:
 
@@ -154,7 +160,7 @@ This creates a **balanced pricing system that minimizes loss risk for the platfo
 
 ---
 
-## 7. Event Engine and Automation
+## 8. Event Engine and Automation
 
 The event engine continuously monitors external data sources and triggers disruptions.
 
@@ -180,7 +186,7 @@ Tasks include:
 
 ---
 
-## 8. Claims and Payout System
+## 9. Claims and Payout System
 
 * Fully automated claim generation
 * No manual user input required
@@ -203,7 +209,7 @@ Transaction processed via sandbox API
 
 ---
 
-## 9. System Architecture
+## 10. System Architecture
 
 ### Frontend
 
@@ -239,7 +245,7 @@ Transaction processed via sandbox API
 
 ---
 
-## 10. Data Model
+## 11. Data Model
 
 ### Entities
 
@@ -258,7 +264,7 @@ Transaction processed via sandbox API
 
 ---
 
-## 11. Data Sources
+## 12. Data Sources
 
 * Weather Data: External APIs (e.g., OpenWeather)
 * Pollution Data: AQI APIs
@@ -267,7 +273,7 @@ Transaction processed via sandbox API
 
 ---
 
-## 12. Dashboards
+## 13. Dashboards
 
 ### Worker Dashboard
 
@@ -285,7 +291,7 @@ Transaction processed via sandbox API
 
 ---
 
-## 13. UI/UX Design
+## 14. UI/UX Design
 
 Our platform UI has been designed using Figma, covering multiple workflows including worker onboarding, policy management, and admin analytics.
 
@@ -294,7 +300,7 @@ https://www.figma.com/proto/UuKRiV0disS98rJceBoaxu/DevTrails?node-id=1-2&t=RqRnX
 
 ---
 
-## 14. Demo Plan
+## 15. Demo Plan
 
 The system demonstration will include:
 
@@ -306,7 +312,7 @@ The system demonstration will include:
 
 ---
 
-## 15. Future Scope
+## 16. Future Scope
 
 * Integration with real delivery platforms
 * Advanced predictive modeling
@@ -315,13 +321,13 @@ The system demonstration will include:
 
 ---
 
-## 16. Innovation: Smarter and Proactive Protection
+## 17. Innovation: Smarter and Proactive Protection
 
 Our system is not just about giving money after a problem happens. It also helps workers prepare in advance and reduce their losses.
 
 ---
 
-### 16.1 Early Risk Alerts
+### 17.1 Early Risk Alerts
 
 The system predicts if a disruption (like heavy rain or pollution) is likely to happen soon.
 
@@ -333,7 +339,7 @@ Example:
 
 ---
 
-### 16.2 Smart Work Suggestions
+### 17.2 Smart Work Suggestions
 
 Based on the risk, the system gives simple suggestions to workers.
 
@@ -345,7 +351,7 @@ This helps workers earn more even during risky conditions.
 
 ---
 
-### 16.3 Better Payout Calculation
+### 17.3 Better Payout Calculation
 
 Instead of giving a fixed payout, we calculate how much money the worker is likely to lose.
 
@@ -359,7 +365,7 @@ This makes payouts:
 
 ---
 
-### 16.4 Transparent Pricing
+### 17.4 Transparent Pricing
 
 We use explainable AI (SHAP) to show how the premium is calculated.
 
@@ -369,7 +375,7 @@ Workers can understand:
 
 ---
 
-### 16.5 Impact
+### 17.5 Impact
 
 This system changes from:
 
@@ -379,6 +385,6 @@ Workers are not only paid after a loss, but also helped to avoid or reduce that 
 
 ---
 
-## 17. Conclusion
+## 18. Conclusion
 
 This system provides a scalable and automated insurance solution tailored for gig workers, combining AI-driven pricing, real-time event monitoring, and instant payouts to ensure financial resilience against unpredictable external disruptions.
