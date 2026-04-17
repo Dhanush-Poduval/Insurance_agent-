@@ -1,8 +1,8 @@
-# AI-Powered Insurance Platform for Gig Workers
+# AI-Powered Insurance Platform for Food delivery Workers
 
 ## 1. Overview
 
-This project proposes an AI-driven parametric insurance platform designed to protect gig economy delivery workers from income loss caused by external disruptions such as extreme weather, pollution, and local restrictions.
+This project proposes an AI-driven parametric insurance platform designed to protect food delivery workers from income loss caused by external disruptions such as extreme weather, pollution, and local restrictions.
 
 The system provides **automated weekly insurance coverage**, dynamic premium pricing, real-time disruption monitoring, and instant payouts without requiring manual claims.
 
