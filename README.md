@@ -1,13 +1,14 @@
 # AI-Powered Insurance Platform for Food Delivery workers
 
+## PITCH DECK 
+  link to check out our pitch ->
+  https://docs.google.com/presentation/d/10yEzOKZ5e4kHE8dryvEkjY2QE97oO_7m/edit?usp=drive_link&ouid=112165478930749982710&rtpof=true&sd=true
+
 ## 1. Overview
 
 This project proposes an AI-driven parametric insurance platform designed to protect delivery workers from income loss caused by external disruptions such as extreme weather, pollution, and local restrictions.
 
 The system provides **automated weekly insurance coverage**, dynamic premium pricing, real-time disruption monitoring, and instant payouts without requiring manual claims.
-
-pitch deck for our project safar ->
-        https://docs.google.com/presentation/d/10yEzOKZ5e4kHE8dryvEkjY2QE97oO_7m/edit?usp=drive_link&ouid=112165478930749982710&rtpof=true&sd=true
 
 ---
 
